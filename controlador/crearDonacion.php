@@ -6,13 +6,13 @@ require_once '../modelo/MDonaciones.php';
 
 $cantidad = $_POST['cantidad'];
 $nota = $_POST['nota'];
-$material = $_POST['material'];
+$materialId = $_POST['materialId'];
 
 $donacion = new MDonaciones();
 $donacion -> anadirDonacion([
     "cantidad"=> $cantidad,
     "nota"=> $nota,
-    "material"=> $material
+    "materialId"=> $materialId
 ]);
 
 echo "Donación añadida correctamente";

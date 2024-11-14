@@ -25,11 +25,17 @@
                     </div>
                     <div class="mb-3">
                         <label for="material" class="form-label">Material</label>
-                        <select class="form-control" id="material" name="material" required>
+                        <select class="form-control" id="materialId" name="materialId" required>
                             <!--se rellenará de la BBDD-->
                             <option value="" disabled selected>Seleccione un material</option>
                             //Llamada para obtener los datos de la BBDD
-                            <?php include '../modelo/ObtenerMateriales.php'; ?>
+                            <?php
+                                require_once '../modelo/MDonaciones.php';
+                                use Modelo\MDonaciones;
+
+                                $materiales = new MDonaciones();
+                                echo $materiales->obtenerOpciones();
+                            ?>
 
                         </select>
                     </div>

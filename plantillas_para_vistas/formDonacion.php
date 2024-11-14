@@ -14,23 +14,23 @@
         <div class="row">
             <div class="col">
 
-                <form method="post" action="#">
+                <form method="post" action="../controlador/crearDonacion.php">
                     <div class="mb-3">
                         <label for="cantidad" class="form-label">Cantidad</label>
-                        <input type="number" class="form-control" id="cantidad" required>
+                        <input type="number" class="form-control" id="cantidad" name="cantidad" required>
                     </div>
                     <div class="mb-3">
                         <label for="nota" class="form-label">Nota</label>
-                        <input type="text" class="form-control" id="nota" required>
+                        <input type="text" class="form-control" id="nota" name="nota" required>
                     </div>
                     <div class="mb-3">
                         <label for="material" class="form-label">Material</label>
                         <select class="form-control" id="material" name="material" required>
                             <!--se rellenará de la BBDD-->
                             <option value="" disabled selected>Seleccione un material</option>
-                            <option value="materialA">Material A</option>
-                            <option value="materialB">Material B</option>
-                            <option value="materialC">Material C</option>
+                            //Llamada para obtener los datos de la BBDD
+                            <?php include '../modelo/ObtenerMateriales.php'; ?>
+
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>

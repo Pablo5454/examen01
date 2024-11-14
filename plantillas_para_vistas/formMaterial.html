@@ -13,14 +13,14 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form method="post" action="#">
+                <form method="post" action="../controlador/crearMaterial.php">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" required>
+                        <input type="text" class="form-control" id="nombre" name = "nombre" required>
                     </div>
                     <div class="mb-3">
                         <label for="cantidad_necesitada" class="form-label">Cantidad Necesitada</label>
-                        <input type="number" class="form-control" id="cantidad_necesitada" required>
+                        <input type="number" class="form-control" id="cantidad_necesitada" name ="cantidad_necesitada" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>

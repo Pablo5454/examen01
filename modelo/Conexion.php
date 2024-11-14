@@ -7,7 +7,7 @@ class Conexion
     protected $con;
     
     public function __construct(){
-        $this->con = new \mysqli('localhost', 'root', '', 'nombreBBDD');
+        $this->con = new \mysqli('localhost', 'root', '', 'nombrebbdd');
         
     }
 

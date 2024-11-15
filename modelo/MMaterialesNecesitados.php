@@ -11,4 +11,15 @@ class MMaterialesNecesitados extends Conexion {
         $sentencia->execute();
         $sentencia->close();
     }
+
+    public function materiales() {
+        $resultado = $this->getCon()->query("select * from materiales_necesitados");
+
+        $materiales = [];
+        while ($fila = $resultado->fetch_assoc()){
+            $materiales[] = $fila;
+        }
+        
+        return $materiales;
+    }
 }

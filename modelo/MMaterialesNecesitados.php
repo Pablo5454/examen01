@@ -22,4 +22,18 @@ class MMaterialesNecesitados extends Conexion {
         
         return $materiales;
     }
+
+    public function anadirDonacion($donacion) {
+        $sentencia = $this->getCon()->prepare("INSERT INTO ayudas (material_id, cantidad, nota) VALUES (?, ?, ?)");
+        $sentencia->bind_param("iis", $donacion["materialId"], $donacion["cantidad"], $donacion["nota"]);
+        $sentencia->execute();
+        $sentencia->close();
+    }
+
+    public function restarDonacion($donacion){
+        $sentencia = $this->getCon()->prepare("UPDATE materiales_necesitados SET cantidad_necesitada = cantidad_necesitada - ? WHERE id = ?");
+        $sentencia->bind_param("ii", $donacion["cantidad"], $donacion["materialId"]);
+        $sentencia->execute();
+        $sentencia->close();
+    }
 }
